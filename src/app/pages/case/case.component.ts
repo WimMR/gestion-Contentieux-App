@@ -14,6 +14,8 @@ export class CaseComponent implements OnInit{
 
   cases!: any[];
 
+  researchCase:Case= new Case();
+
   constructor(private caseService: CaseService, private router: Router) { }
 
   ngOnInit(): void {
@@ -41,6 +43,11 @@ export class CaseComponent implements OnInit{
     localStorage.setItem("editCaseId", caseObject.idCase.toString());
     this.router.navigate(['/editCase', caseObject.idCase]);
 
+  }
+
+  findOneCase(id:number)
+  {
+    this.caseService.findOne(id).subscribe(data=>{this.researchCase=data})
   }
 }
 
