@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 import { CaseService } from './services/case.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DocumentService } from './services/document.service';
+import { TacheComponent } from './pages/tache/tache.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CaseComponent,
     DocumentComponent,
+    TacheComponent,
   ],
   imports: [
     BrowserModule,
