@@ -77,9 +77,10 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">Title</th>
-                                <th scope="col">Refrence</th>
+                                <th scope="col">Reference</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Related_Documents</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,6 +89,7 @@
                                 <td>{{c.referenceCase}}</td>
                                 <td>{{c.descriptionCase}}</td>
                                 <td>{{c.status}}</td>
+                                <td ><span *ngFor="let d of c.documents">{{d.nameDoc}}, </span></td>
                                 <td>
                                     <button class="btn btn-outline-danger"
                                         (click)="deleteCase(c.idCase)">Delete</button>

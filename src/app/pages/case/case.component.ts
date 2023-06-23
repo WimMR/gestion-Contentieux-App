@@ -39,7 +39,7 @@ export class CaseComponent implements OnInit{
   editCase(caseObject: Case) {
     localStorage.removeItem("editCaseId");
     localStorage.setItem("editCaseId", caseObject.idCase.toString());
-    this.router.navigate(['/editAgence', caseObject.idCase]);
+    this.router.navigate(['/editCase', caseObject.idCase]);
 
   }
 }

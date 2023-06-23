@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
     providedIn:'root'
 })
 
-export class CaseService
+export class DocumentService
 {
-    private BASE_URL ="http://localhost:8080/cases";
+    private BASE_URL ="http://localhost:8080/documents";
 
     constructor(private httpClient:HttpClient) {}
 
@@ -16,8 +16,8 @@ export class CaseService
     return this.httpClient.get(this.BASE_URL);
   }
   
-  public save(caseObject:any) : Observable<any>{
-    return this.httpClient.post(this.BASE_URL,caseObject);
+  public save(documentObject:any) : Observable<any>{
+    return this.httpClient.post(this.BASE_URL,documentObject);
   }
   
   public delete(id:number) : Observable<any>{
@@ -28,9 +28,8 @@ export class CaseService
     return this.httpClient.get(this.BASE_URL+"/"+id);
   } 
 
-  public update(caseObject:any) : Observable<any>{
-    var caseJSON = JSON.parse(caseObject);
-    return this.httpClient.put(this.BASE_URL+'/'+caseJSON.idCase, caseJSON);
+  public update(documentObject:any) : Observable<any>{
+    var documentJSON = JSON.parse(documentObject);
+    return this.httpClient.put(this.BASE_URL+'/'+documentJSON.idDocument, documentJSON);
   }
 }
-
