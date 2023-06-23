@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CaseComponent } from './pages/case/case.component';
 import { DocumentComponent } from './pages/document/document.component';
 import { CaseService } from './services/case.service';
@@ -27,7 +27,7 @@ import { TacheComponent } from './pages/tache/tache.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
 
   ],
   providers: [CaseService, DocumentService],
