@@ -11,6 +11,7 @@ import { DocumentComponent } from './pages/document/document.component';
 import { CaseService } from './services/case.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DocumentService } from './services/document.service';
+import { TacheComponent } from './pages/tache/tache.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DocumentService } from './services/document.service';
     EditUserComponent,
      CaseComponent,
     DocumentComponent,
+    TacheComponent,
   ],
   imports: [
     BrowserModule,
