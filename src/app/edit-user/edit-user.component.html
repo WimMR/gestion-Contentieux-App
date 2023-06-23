@@ -1,0 +1,12 @@
+<h1>Editer profil utilisateur</h1>
+<form [formGroup]="editForm">
+    <label>Prénom</label>
+    <input type="text" class="form-control" [(ngModel)]="user.prenomUtilisateur" formControlName="nomUtilisateur">
+
+    <label>Nom</label>
+    <input type="text" class="form-control" [(ngModel)]="user.nomUtilisateur" formControlName="prenomUtilisateur">
+    <label>Email</label>
+    <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email">
+    <button class="btn btn-primary btn-round" (click)="updateUser()">Modifier</button>
+
+</form>

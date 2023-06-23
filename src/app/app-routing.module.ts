@@ -4,12 +4,19 @@ import { CaseComponent } from './pages/case/case.component';
 import { DocumentComponent } from './pages/document/document.component';
 import { TacheComponent } from './pages/tache/tache.component';
 
-export const routes: Routes = [
-    {path:'case', component:CaseComponent},
-    {path :'document', component:DocumentComponent},
-    {path :'tache', component:TacheComponent},
+
+import { UserComponent } from './user/user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+
+const routes: Routes = [
+  { path: 'user', component: UserComponent },
+  { path: 'edit-User/:id', component: EditUserComponent },
+  {path:'case', component:CaseComponent},
+  {path :'document', component:DocumentComponent},
+      {path :'tache', component:TacheComponent},
 
   
+
 
 ];
 
