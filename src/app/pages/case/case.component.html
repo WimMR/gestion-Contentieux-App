@@ -20,7 +20,32 @@
                         </div>
                     </div>
                 </div>
+                  
                 <div class="card-body">
+                    <form (ngSubmit)="findOneCase(researchCase.idCase)">
+                    <div style="margin : 0 auto; width: fit-content;">
+                        Research
+                        <select [(ngModel)]="researchCase.idCase" name="researchIdCase"
+                        class="form-control form-control-alternative" >
+                    <option *ngFor="let c of cases" [ngValue]="c.idCase">{{c.titleCase}}</option>
+                    </select>
+                    <div>
+                        <button class="btn btn-danger">Search</button>
+                    </div>
+                    </div>
+                    </form>
+                    <div style="margin : 0 auto; width: fit-content;">
+                        <tr>
+                            <th scope="col">Resultat de la recherche</th>
+                        </tr>
+                        <tr>
+                            <td>{{researchCase.titleCase}}</td>
+                            <td>{{researchCase.referenceCase}}</td>
+                            <td>{{researchCase.descriptionCase}}</td>
+                            <td>{{researchCase.status}}</td>
+                            <td><span *ngFor="let d of researchCase.documents">{{d.nameDoc}},</span></td>
+                        </tr>
+                    </div>
                     <form (ngSubmit)="saveCase()">
                         <h6 class="heading-small text-muted mb-4">Case informations</h6>
                         <div class="pl-lg-4">
@@ -50,7 +75,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-reference">Status</label>
                                         <input type="number" [(ngModel)]="caseObject.status" name="status"
-                                            class="form-control form-control-alternative" placeholder="Status : 0 / 1">
+                                            class="form-control form-control-alternative" placeholder="Status : 0 / 1 / 2">
                                     </div>
                                 </div>
 
@@ -96,6 +121,43 @@
                                     <button class="btn btn-info" (click)="editCase(c)">Edit</button>
 
                                 </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">DashBoard</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Archived</th>
+                                <th scope="col">In progress</th>
+                                <th scope="col">In coming</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>
+                                <tr *ngFor="let c of cases">
+                                    <ng-container *ngIf="c.status ===0"><td>{{c.titleCase}}</td></ng-container>
+                                </tr>
+                            </td>
+                            <td>
+                                <tr *ngFor="let c of cases">
+                                    <ng-container *ngIf="c.status ===1"><td>{{c.titleCase}}</td></ng-container>
+                                </tr>
+                            </td>
+                            <td>
+                                <tr *ngFor="let c of cases">
+                                    <ng-container *ngIf="c.status ===2"><td>{{c.titleCase}}</td></ng-container>
+                                </tr>
+                            </td>
                         </tbody>
                     </table>
                 </div>
