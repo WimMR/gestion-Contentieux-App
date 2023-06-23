@@ -1,8 +1,12 @@
-<h1>USERS</h1>
-<table >
-    <thead >
+<div class="page-container">
+
+
+
+  <h1>USERS</h1>
+  <table >
+    <thead>
       <th>
-       Id
+        Id
       </th>
       <th>
         Prénom
@@ -24,9 +28,10 @@
         <td>{{u.nomUtilisateur}}</td>
         <td>{{u.email}}</td>
         <td>
-          <button (click)="deleteUser(u.idUtilisateur)" >Delete</button>
-          <button  (click)="editUser(u)">Editer</button>
+          <button (click)="deleteUser(u.idUtilisateur)">Delete</button>
+          <button (click)="editUser(u)">Editer</button>
         </td>
-    </tr>
+      </tr>
     </tbody>
   </table>
+</div>

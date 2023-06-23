@@ -27,7 +27,7 @@ import { TacheComponent } from './pages/tache/tache.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
 
   ],
   providers: [CaseService, DocumentService],
